@@ -54,41 +54,58 @@ h1 {
     background-color: darkorange;
 }
 
-.container .squares:nth-child(-n+4):hover {
+.container .squares:nth-child(-n+3):hover {
     background-image: url("../Images/Icons/happy_face2.png");
     transform:scale(.125);
     /*naming animation 'race'*/
     animation-name: race;
-    animation-duration: 2.5s;
     animation-iteration-count: infinite;
     animation-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
 .squares:nth-child(1):hover {
     background-color: deepskyblue;
+    animation-duration: 3s;
 }
 
 .squares:nth-child(2):hover {
     background-color: goldenrod;
+    animation-duration: 1s;
 }
 
 .squares:nth-child(3):hover {
     background-color: hotpink;
+    animation-duration: .125s;
 }
 
 .squares:nth-child(4):hover {
     background-color: lightseagreen;
-}
+    animation-duration: 10s;
+    animation-name: walk;
+    animation-iteration-count: 1;
+    }
 
 /*defining our animation*/
 @keyframes race {
     /*beginning and end will have same state bc 0 & 100%*/
     0%, 100% {
         transform: translateY(0px);
-        background-image: url("../Images/Icons/happy_face2.png");        
+        background-image: url("../Images/Icons/happy_face2.png");
+        
     }
     /*halfway through will produce different effect*/
     50% {
+        transform: translateY(375px);
+    }
+}
+
+@keyframes walk {
+    0%, 100% {
+        transform: translateY(0px);
+        background-image: url("../Images/Icons/happy_face2.png");
+    }
+
+    100% {
         transform: translateY(375px);
     }
 }
