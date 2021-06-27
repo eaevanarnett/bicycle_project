@@ -1,16 +1,94 @@
 body {
-    background-color:white;
+    background-color: #fff;
 }
 
 h1 {
-    color:darkcyan;
-    margin-left: 50px;
-    text-shadow: 4px 1px 7px #dbdbdb;
+    color: darkcyan;
+    margin-left: 140px;
+    text-shadow: 4px 1px 4px #dbdbdb
 }
 
 .container {
     width: 500px;
     height: 500px;
-    background-color:darkkhaki;
-    border: 5px solid darkcyan;
+    background-color: cornflowerblue;
+    border: 5px solid black;
+    border-radius: 2%;
+}
+
+.container .squares:nth-child(-n+4) {
+    background-image: url("../Images/Icons/happy_face1.png");
+    color: #fff;
+    float: left;
+    width: 105px;
+    height: 113px;
+    margin: 9px;
+    border: 1px solid black;
+    border-radius: 40%;
+    cursor: pointer;
+    transition: transform .5s ease-in-out;
+} 
+
+.squares:nth-child(-n+4) p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
+    font-weight: 900;
+    text-align: center;
+    margin: 0;
+    text-shadow: 4px 1px 4px #dbdbdb;
+}
+
+.squares:nth-child(1) {
+    background: crimson;
+}
+
+.squares:nth-child(2) {
+    background-color: darkgreen;
+}
+
+.squares:nth-child(3) {
+    background-color: darkmagenta;
+}
+
+.squares:nth-child(4) {
+    background-color: darkorange;
+}
+
+.container .squares:nth-child(-n+4):hover {
+    background-image: url("../Images/Icons/happy_face2.png");
+    transform:scale(.125);
+    /*naming animation 'race'*/
+    animation-name: race;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.squares:nth-child(1):hover {
+    background-color: deepskyblue;
+}
+
+.squares:nth-child(2):hover {
+    background-color: goldenrod;
+}
+
+.squares:nth-child(3):hover {
+    background-color: hotpink;
+}
+
+.squares:nth-child(4):hover {
+    background-color: lightseagreen;
+}
+
+/*defining our animation*/
+@keyframes race {
+    /*beginning and end will have same state bc 0 & 100%*/
+    0%, 100% {
+        transform: translateY(0px);
+        background-image: url("../Images/Icons/happy_face2.png");        
+    }
+    /*halfway through will produce different effect*/
+    50% {
+        transform: translateY(375px);
+    }
 }
