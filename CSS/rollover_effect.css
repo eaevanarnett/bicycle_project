@@ -1,0 +1,78 @@
+body {
+    background: lightblue;
+}
+
+.wrap {
+    top: 0;
+    left: 0;
+    height: auto;
+    width: 100%;
+}
+
+.menu_container {
+    top: 0;
+    left: 0;
+    /* To the top edge of the screen */
+    position: absolute;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.menu {
+    font: large bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu li {
+    color: black;
+    display: inline-block;
+    margin-right: -5px;
+    position: relative;
+    padding: 10px 40px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: lightskyblue;
+    color: white;
+}
+
+.menu li:hover ul {
+    display: block;
+    opacity: 1;
+    /* while hovered drop down menu appears 
+    This also avoids a block-level bug */
+    visibility: visible;
+}
+
+.submenu {
+    padding: 0;
+    left: 0;
+    position: absolute;
+    top: 40px;
+    width: 125px;
+    opacity: 0;
+    /* While not being hovered drop down menu hides
+    this also a aboids a block-level bug */
+    visibility: hidden;
+}
+
+.submenu li {
+    background-color: lightsteelblue;
+    display: block;
+    color: white;
+}
+
+.submenu li:hover {
+    color: black;
+    background-color: lightskyblue;
+}
+
